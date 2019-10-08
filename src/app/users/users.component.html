@@ -1,0 +1,6 @@
+<div class="row" *ngFor="let user of userArray; let i = index" (click)="onSelectUser(user)">
+    <div class="col-xs-12">
+        <img src="{{ user.avatar_url }}" style="width: 30px; height: 30px; cursor: pointer;">&nbsp;&nbsp;<u
+            style="cursor: pointer">{{ user.login }}</u>
+    </div>
+</div>

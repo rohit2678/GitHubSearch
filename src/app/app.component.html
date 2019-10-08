@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <input type="text" name="user" id="user" class="form-control" (input)="onInput($event)" #f>
+    </div>
+    <div class="col-xs-2">
+      <button class="btn btn-primary" (click)="onInput(f)">Search From Here</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <app-users></app-users>
+    </div>
+    <div class="col-xs-1">
+      <div class="vertical"></div>
+    </div>
+    <div class="col-xs-8">
+      <app-user *ngIf="this.search.isUserSelected"></app-user>
+    </div>
+  </div>
+</div>

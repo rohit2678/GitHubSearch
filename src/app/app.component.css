@@ -1,0 +1,10 @@
+.container{
+    margin-top: 10px;
+}
+
+.vertical { 
+    border: 0.5px solid grey; 
+    height: 500px; 
+    position:absolute; 
+    left: 50%; 
+} 
