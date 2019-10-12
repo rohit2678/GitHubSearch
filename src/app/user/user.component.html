@@ -1,7 +1,20 @@
 <div class="row">
     <div class="col-xs-12" *ngIf="userSelected">
-        <p >{{ userSelected.login }}</p>
-        <p >{{ userSelected.events_url }}</p>
-        <p >{{ userSelected.id }}</p>
+        <img src="{{ userSelected.avatar_url }}" style= "width: 100px; height: 100px;"><br>
+        <p ><b>Login: </b>{{ userSelected.login }}</p>
+        <p ><b>Event_URL: </b>{{ userSelected.events_url }}</p>
+        <p ><b>ID: </b>{{ userSelected.id }}</p>
+        <p ><b>Avatar_URL: </b>{{ userSelected.avatar_url }}</p>
+        <p ><b>Followers_URL: </b>{{ userSelected.followers_url }}</p>
+        <p ><b>Following_URL: </b>{{ userSelected.following_url }}</p>
+        <p ><b>Gists_URL: </b>{{ userSelected.gists_url }}</p>
+        <p ><b>Html_URL: </b>{{ userSelected.html_url }}</p>
+        <p ><b>Node_ID: </b>{{ userSelected.node_id }}</p>
+        <p ><b>Organizations_URL: </b>{{ userSelected.organizations_url }}</p>
+        <p ><b>Received_Events_URL: </b>{{ userSelected.received_events_url }}</p>
+        <p ><b>Repos_URL: </b>{{ userSelected.repos_url }}</p>
+        <p ><b>Score: </b>{{ userSelected.score }}</p>
+        <p ><b>Subscriptions_URL: </b>{{ userSelected.subscriptions_url }}</p>
+        <p ><b>URL: </b>{{ userSelected.url }}</p>
     </div>
 </div>
