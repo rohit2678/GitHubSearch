@@ -19,13 +19,19 @@ export class SignUpComponent implements OnInit {
   }
 
   onSignUp() {
-    if (this.password === this.cpassword) {
+    if (this.password === this.cpassword && this.emailId != "" && this.password != "") {
       this.search.userData.push({ name: this.emailId, password: this.password });
       console.log("Matched", this.search.userData);
       //localStorage.userInfo = JSON.stringify(this.search.userData);
       localStorage.setItem("userInfo", JSON.stringify(this.search.userData));
       console.log("SignUp", JSON.parse(localStorage.getItem("userInfo")));
       this.router.navigateByUrl("");
+    }
+    else if(this.password != this.cpassword){
+      alert("Password and confirm password does not match");
+    }
+    else{
+      alert("Something Went Wrong. Try again Later...");
     }
   }
 }

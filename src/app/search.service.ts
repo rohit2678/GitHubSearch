@@ -18,7 +18,8 @@ export class SearchService {
     searchEvent = new EventEmitter<string>();
 
     constructor(private http: HttpClient, private router: Router) {
-        if ((JSON.parse(localStorage.userInfo)).length > 0) {
+        const userInfo = localStorage.getItem("userInfo");
+        if (userInfo) {
             this.userData = JSON.parse(localStorage.userInfo);
             console.log("Got", this.userData);
         }
@@ -30,10 +31,12 @@ export class SearchService {
         this.isLoading = true;
         const userInfo = localStorage.getItem("userInfo");
 
+        //console.log("userInfo", )
         if (userInfo) {
             const userArray = JSON.parse(userInfo);
-            const user = userArray.find(user => user.username == emailId && user.password == password);
-            console.log("User", user);
+            console.log("UserList", userArray);
+            const user = userArray.find((user: {name: string, password: string}) => user.name == emailId && user.password == password);
+            console.log("Users", user, "emailid", emailId, "password", password);
             if (user) {
                 this.isLoading = false;
                 this.isLoggedIn = true;
@@ -44,7 +47,7 @@ export class SearchService {
             else {
                 this.isLoading = false;
                 this.isLoggedIn = false;
-                console.log(" In-valid username and password");
+                alert(" In-valid username and password");
             }
         }
     }
