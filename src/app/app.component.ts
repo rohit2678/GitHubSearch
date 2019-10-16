@@ -9,10 +9,5 @@ import { SearchService } from './search.service';
 export class AppComponent {
   title = 'searchUserName';
 
-  constructor(private search: SearchService){}
-
-  onInput(event: any){
-    //console.log("Event"+ event.target.value);
-    this.search.searchEvent.emit(event);
-  }
+  constructor(){}
   }

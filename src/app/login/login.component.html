@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-xs-4"></div>
+    <form #f="ngForm">
+      <div class="col-xs-4">
+        <input type="email" class="form-control" [(ngModel)]="emailId" name="email" id="email" required
+          placeholder="Please Enter Your Email Id" [disabled]="this.search.isLoading"><br>
+        <input type="password" [disabled]="this.search.isLoading" class="form-control" [(ngModel)]="password" minlength="5" name="password" ngModel required
+          placeholder="Please Enter Your Password"><br>
+        <div class="col-xs-6">
+          <button class="btn btn-primary form-control" [disabled]="!f.valid" (click)="onLogin()"
+            type="button">Login</button>
+        </div>
+        <div class="col-xs-6">
+          <button class="btn btn-primary form-control" routerLink="signUp">Sign Up</button>
+        </div>
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4"><br>
+          <a href="#">Forgot Password?</a><br>
+          <div class="loader" *ngIf="this.search.isLoading"></div>
+        </div>
+        <div class="col-xs-4"></div>
+      </div>
+  
+    </form>
+  
+  </div>

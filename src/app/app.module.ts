@@ -6,16 +6,37 @@ import { SearchService } from './search.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+const router: Routes = [
+  { path: "home", component: HomeComponent },
+  { path: "signUp", component: SignUpComponent },
+  { path: "", component: LoginComponent }
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    UserComponent
+    UserComponent,
+    HeaderComponent,
+    HomeComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(router)
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
