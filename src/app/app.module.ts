@@ -12,9 +12,10 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './auth.guard';
 
 const router: Routes = [
-  { path: "home", component: HomeComponent },
+  { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
   { path: "signUp", component: SignUpComponent },
   { path: "", component: LoginComponent }
 ]

@@ -9,6 +9,7 @@ export class SearchService {
     userArray: Array<any>;
     userData: Array<{ name: string, password: string }> = [];
     user: any;
+    userFound: {name: string, password: string};
 
     isLoggedIn: boolean = false;
     isLoading: boolean = false;
@@ -38,6 +39,7 @@ export class SearchService {
             const user = userArray.find((user: {name: string, password: string}) => user.name == emailId && user.password == password);
             console.log("Users", user, "emailid", emailId, "password", password);
             if (user) {
+                this.userFound = user;
                 this.isLoading = false;
                 this.isLoggedIn = true;
                 this.loggedId = emailId;
