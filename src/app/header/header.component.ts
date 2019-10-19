@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,17 @@ import { SearchService } from '../search.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private search: SearchService) { }
+  constructor(private search: SearchService, private router: Router) { }
 
   ngOnInit() {
+    
+  }
+
+  onLogOut(){
+    sessionStorage.clear();
+    this.search.isLoggedIn = false;
+    this.search.userFound = null;
+    this.router.navigateByUrl("/");
   }
 
 }

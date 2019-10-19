@@ -1,13 +1,13 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a routerLink="home" class="navbar-brand">My Project</a>
+            <a routerLink="/home" class="navbar-brand">My Project</a>
         </div>
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <li><a *ngIf="this.search.isLoggedIn">{{this.search.loggedId}}</a></li>
                 <li><a routerLink="/home" *ngIf="this.search.isLoggedIn">Home</a></li>
-                <li><a href="#" *ngIf="this.search.isLoggedIn">Logout</a></li>
+                <li><a *ngIf="this.search.isLoggedIn" (click)="onLogOut()" style="cursor: pointer;">Logout</a></li>
             </ul>
         </div>
     </div>

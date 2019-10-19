@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-xs-4"></div>
+    <form #f="ngForm">
+        <div class="col-xs-4">
+            <input type="text" class="form-control" [(ngModel)]="emailId" name="email" id="email" required
+                placeholder="Please Enter Your Email Id" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"><br>
+            <div class="col-xs-2"></div>
+            <div class="col-xs-6">
+                <button class="btn btn-primary form-control" [disabled]="!f.valid" 
+                (click)="onNext()" type="button">Next</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -44,6 +44,7 @@ export class SearchService {
                 this.isLoggedIn = true;
                 this.loggedId = emailId;
                 console.log("User Id", this.loggedId);
+                sessionStorage.setItem("userInfo", JSON.stringify(user));
                 this.router.navigateByUrl("/home");
             }
             else {

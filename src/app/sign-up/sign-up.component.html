@@ -3,7 +3,7 @@
     <form #f="ngForm">
         <div class="col-xs-4">
             <input type="email" class="form-control" [(ngModel)]="emailId" name="email" id="email" required
-                placeholder="Please Enter Your Email Id" [disabled]="this.search.isLoading"><br>
+                placeholder="Please Enter Your Email Id" [disabled]="this.search.isLoading" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"><br>
             <input type="password" [disabled]="this.search.isLoading" class="form-control" [(ngModel)]="password"
                 minlength="5" name="password" ngModel required placeholder="Please Enter Your Password"><br>
             <input type="password" [disabled]="this.search.isLoading" class="form-control" [(ngModel)]="cpassword"
